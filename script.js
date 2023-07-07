@@ -14,8 +14,36 @@ function addTask()
         listHolder.appendChild(li);
         input.value = "";
         saveData();
+
+        let duplica = document.createElement("duplica");
+        duplica.innerHTML = "🗍";
+        li.append(duplica);
+
+        let span = document.createElement("span");
+        span.innerHTML = "\u00d7";
+        li.append(span);
     }
 }
+
+listHolder.addEventListener("click", function(e){
+    if (e.target.tagName === "LI")
+    {
+        e.target.classList.toggle("checked");
+        saveData();
+    }
+    else if (e.target.tagName === "SPAN")
+    {
+        e.target.parentElement.remove();
+        saveData();
+    }
+    else if (e.target.tagName === "DUPLICA")
+    {
+        var txt = e.target.parentElement.textContent;
+        navigator.clipboard.writeText(txt.slice(0, -3))
+        input.value = txt.slice(0, -3);
+        saveData();
+    }
+});
 
 function saveData()
 {

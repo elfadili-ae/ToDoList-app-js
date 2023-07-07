@@ -77,6 +77,10 @@ ul li {
     user-select: none;
     cursor: pointer;
     font-size: 17px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: #d6d6d6;
 }
 
 ul li::before {
@@ -100,5 +104,41 @@ ul li.checked {
 ul li.checked::before {
     color: #666;
     background-image: url(images/checked.png);
+    background-color: #a7a7a7;
 }
 
+ul li span {
+    position: absolute;
+    margin-left: 2px;
+    right: 0;
+    top: -1px;
+    width: 45px;
+    height: 45px;
+    color: #490000;
+    font-size: 17px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+ul li span:hover {
+    background: #ff7171;
+}
+
+
+ul li duplica {
+    position: absolute;
+    right: 45px;
+    top: -1px;
+    width: 45px;
+    height: 45px;
+    color: #0d0025;
+    font-size: 17px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+ul li duplica:hover {
+    background: #71fff3;
+}
