@@ -83,6 +83,14 @@ ul li {
     background-color: #d6d6d6;
 }
 
+ul li:hover span {
+    display: block;
+}
+
+ul li:hover duplica {
+    display: block;
+}
+
 ul li::before {
     content: '';
     position: absolute;
@@ -108,6 +116,7 @@ ul li.checked::before {
 }
 
 ul li span {
+    display: none;
     position: absolute;
     margin-left: 2px;
     right: 0;
@@ -127,6 +136,7 @@ ul li span:hover {
 
 
 ul li duplica {
+    display: none;
     position: absolute;
     right: 45px;
     top: -1px;
