@@ -9,11 +9,23 @@ function addTask()
         alert("Enter a task first!");
     }
     else {
+        //check if the input already exists
+        const liElements = listHolder.querySelectorAll('li');
+        // Loop through each <li> element and extract the text content
+        liElements.forEach((li) => {
+            //compare tasks
+            console.log(li.textContent.slice(0, -3));
+            if (li.textContent.slice(0, -3) == input.value) {
+                alert("This task already exists!\nmind finishing that first?");
+                return;
+            }
+        });
+
+        //create new element li
         let li = document.createElement("li");
         li.innerHTML = input.value;
         listHolder.appendChild(li);
         input.value = "";
-        saveData();
 
         let duplica = document.createElement("duplica");
         duplica.innerHTML = "🗍";
@@ -22,6 +34,8 @@ function addTask()
         let span = document.createElement("span");
         span.innerHTML = "\u00d7";
         li.append(span);
+
+        saveData();
     }
 }
 
